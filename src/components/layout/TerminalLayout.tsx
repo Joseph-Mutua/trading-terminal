@@ -1,15 +1,11 @@
 import { Panel, PanelGroup, PanelResizeHandle } from 'react-resizable-panels';
+import { TopBar } from '../topbar/TopBar';
 import styles from './TerminalLayout.module.css';
 
 export function TerminalLayout() {
   return (
     <div className={styles.terminal}>
-      {/* Top bar placeholder - will be implemented in commit 3 */}
-      <header className={styles.topBar}>
-        <div className={styles.topBarLeft}>Trading Terminal</div>
-        <div className={styles.topBarCenter} />
-        <div className={styles.topBarRight} />
-      </header>
+      <TopBar />
 
       {/* Main content: vertical split (content area | blotter) */}
       <div className={styles.mainContent}>

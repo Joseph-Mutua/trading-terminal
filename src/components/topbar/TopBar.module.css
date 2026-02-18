@@ -1,0 +1,143 @@
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  min-height: 40px;
+  padding: 0 12px;
+  gap: 16px;
+  background: var(--topbar-bg, rgba(15, 20, 28, 0.98));
+  border-bottom: 1px solid var(--border-subtle, rgba(0, 212, 170, 0.15));
+  flex-shrink: 0;
+}
+
+.left,
+.center,
+.right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.center {
+  flex: 1;
+  max-width: 320px;
+  justify-content: center;
+}
+
+.logo {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--accent, #00d4aa);
+}
+
+.envSelect {
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--terminal-fg, rgba(255, 255, 255, 0.9));
+  background: var(--input-bg, rgba(255, 255, 255, 0.06));
+  border: 1px solid var(--border-subtle, rgba(0, 212, 170, 0.2));
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.envSelect:hover {
+  border-color: var(--accent, rgba(0, 212, 170, 0.5));
+}
+
+.connection {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--danger, #ff4757);
+  transition: background 0.2s;
+}
+
+.statusDot[data-connected="true"] {
+  background: var(--success, #00d4aa);
+  box-shadow: 0 0 8px rgba(0, 212, 170, 0.5);
+}
+
+.statusText {
+  font-size: 11px;
+  color: var(--muted, rgba(255, 255, 255, 0.55));
+}
+
+.latency {
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted, rgba(255, 255, 255, 0.5));
+}
+
+.latencyValue {
+  color: var(--terminal-fg, rgba(255, 255, 255, 0.85));
+}
+
+.latencyUnit {
+  margin-left: 2px;
+  color: var(--muted, rgba(255, 255, 255, 0.45));
+}
+
+.searchWrap {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 6px 10px;
+  background: var(--input-bg, rgba(255, 255, 255, 0.06));
+  border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.1));
+  border-radius: 6px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.searchWrap.searchFocused {
+  border-color: var(--accent, rgba(0, 212, 170, 0.5));
+  box-shadow: 0 0 0 2px rgba(0, 212, 170, 0.15);
+}
+
+.searchIcon {
+  margin-right: 8px;
+  font-size: 12px;
+  color: var(--muted, rgba(255, 255, 255, 0.4));
+}
+
+.searchInput {
+  flex: 1;
+  min-width: 0;
+  font-size: 12px;
+  color: var(--terminal-fg, rgba(255, 255, 255, 0.9));
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.searchInput::placeholder {
+  color: var(--muted, rgba(255, 255, 255, 0.35));
+}
+
+.themeToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 28px;
+  font-size: 14px;
+  color: var(--muted, rgba(255, 255, 255, 0.6));
+  background: var(--input-bg, rgba(255, 255, 255, 0.06));
+  border: 1px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s, border-color 0.15s;
+}
+
+.themeToggle:hover {
+  color: var(--accent, #00d4aa);
+  border-color: var(--border-subtle, rgba(0, 212, 170, 0.25));
+}
