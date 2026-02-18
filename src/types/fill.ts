@@ -6,4 +6,7 @@ export interface Fill {
   price: number;
   qty: number;
   ts: number;
+  accountId?: string;
+  strategyId?: string;
+  fee?: number;
 }

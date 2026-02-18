@@ -4,6 +4,7 @@ interface WatchlistState {
   symbols: string[];
   addSymbol: (symbol: string) => void;
   removeSymbol: (symbol: string) => void;
+  renameSymbol: (prevSymbol: string, nextSymbol: string) => void;
   setSymbols: (symbols: string[]) => void;
   moveSymbol: (fromIndex: number, toIndex: number) => void;
 }
@@ -16,6 +17,12 @@ export const useWatchlistStore = create<WatchlistState>((set) => ({
     ),
   removeSymbol: (symbol) =>
     set((s) => ({ symbols: s.symbols.filter((x) => x !== symbol) })),
+  renameSymbol: (prevSymbol, nextSymbol) =>
+    set((s) => ({
+      symbols: s.symbols.map((symbol) =>
+        symbol === prevSymbol ? nextSymbol.toUpperCase() : symbol
+      ),
+    })),
   setSymbols: (symbols) => set({ symbols: [...symbols] }),
   moveSymbol: (fromIndex, toIndex) =>
     set((s) => {

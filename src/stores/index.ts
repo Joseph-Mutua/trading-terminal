@@ -5,5 +5,7 @@ export { useTicksStore } from './ticksStore';
 export { useOrdersStore } from './ordersStore';
 export { useFillsStore } from './fillsStore';
 export { usePositionsStore } from './positionsStore';
+export { useRiskStore } from './riskStore';
 export { useBlotterStore, type BlotterTab } from './blotterStore';
 export { useSelectionStore } from './selectionStore';
+export { useGridViewsStore, type GridViewState } from './gridViewsStore';

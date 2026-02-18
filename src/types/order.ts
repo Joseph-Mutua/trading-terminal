@@ -21,4 +21,7 @@ export interface Order {
   createdAt: number;
   updatedAt: number;
   accountId?: string;
+  strategyId?: string;
+  estNotional?: number;
+  riskFlag?: 'OK' | 'WARN' | 'BLOCKED';
 }
