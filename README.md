@@ -1,5 +1,7 @@
 # Trading Terminal
 
+Live demo: https://trading-terminal-green.vercel.app/
+
 Modern multi-panel trading terminal built with React, Zustand, and AG Grid.
 
 ## Features
