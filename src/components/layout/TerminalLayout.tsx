@@ -4,6 +4,7 @@ import { WatchlistGrid } from '../watchlist/WatchlistGrid';
 import { OrderEntryTicket } from '../orderEntry/OrderEntryTicket';
 import { ChartPanel } from '../chart/ChartPanel';
 import { TimeAndSales } from '../chart/TimeAndSales';
+import { Blotter } from '../blotter/Blotter';
 import styles from './TerminalLayout.module.css';
 
 export function TerminalLayout() {
@@ -57,16 +58,7 @@ export function TerminalLayout() {
           <Separator className={styles.resizeHandleVertical} />
           {/* Bottom: Blotter tabs */}
           <Panel defaultSize={30} minSize={120} maxSize={50} className={styles.blotterPanel}>
-            <div className={styles.blotterContent}>
-              <div className={styles.blotterTabs}>
-                <button type="button" className={styles.tabActive}>Orders</button>
-                <button type="button" className={styles.tab}>Fills</button>
-                <button type="button" className={styles.tab}>Positions</button>
-              </div>
-              <div className={styles.blotterGridPlaceholder}>
-                Blotter grid
-              </div>
-            </div>
+            <Blotter />
           </Panel>
         </Group>
       </div>
