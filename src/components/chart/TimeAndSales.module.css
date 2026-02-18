@@ -8,11 +8,14 @@
 
 .header {
   display: grid;
-  grid-template-columns: 50px 1fr 50px;
+  grid-template-columns: 58px 1fr 52px 44px;
   gap: 8px;
   padding: 4px 0;
-  color: var(--muted, rgba(255, 255, 255, 0.5));
-  border-bottom: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.08));
+  color: var(--muted);
+  border-bottom: 1px solid var(--border-subtle);
+  font-family: var(--font-ui);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .list {
@@ -23,33 +26,37 @@
 
 .empty {
   padding: 12px;
-  color: var(--muted, rgba(255, 255, 255, 0.4));
+  color: var(--muted);
 }
 
 .row {
   display: grid;
-  grid-template-columns: 50px 1fr 50px;
+  grid-template-columns: 58px 1fr 52px 44px;
   gap: 8px;
-  padding: 2px 0;
+  padding: 3px 0;
   font-variant-numeric: tabular-nums;
 }
 
 .row:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .time {
-  color: var(--muted, rgba(255, 255, 255, 0.5));
+  color: var(--muted);
 }
 
 .price {
-  color: var(--terminal-fg, rgba(255, 255, 255, 0.9));
+  color: var(--terminal-fg);
 }
 
 .buy {
-  color: var(--success, #00d4aa);
+  color: var(--success);
 }
 
 .sell {
-  color: var(--danger, #ff4757);
+  color: var(--danger);
+}
+
+.source {
+  color: var(--muted);
 }

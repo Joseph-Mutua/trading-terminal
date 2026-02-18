@@ -3,41 +3,57 @@
   flex-direction: column;
   flex: 1;
   min-height: 0;
+  gap: 10px;
 }
 
 .chartHeader {
   display: flex;
-  align-items: baseline;
-  gap: 12px;
-  margin-bottom: 8px;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.symbolBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .symbol {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--terminal-fg, rgba(255, 255, 255, 0.9));
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--terminal-fg);
 }
 
 .last {
-  font-size: 13px;
+  font-size: 12px;
   font-variant-numeric: tabular-nums;
-  color: var(--muted, rgba(255, 255, 255, 0.6));
+  color: var(--muted);
+}
+
+.statBlock {
+  display: flex;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--muted);
 }
 
 .positive {
-  color: var(--success, #00d4aa);
+  color: var(--success);
 }
 
 .negative {
-  color: var(--danger, #ff4757);
+  color: var(--danger);
 }
 
 .chartSvgWrap {
   flex: 1;
-  min-height: 80px;
-  border: 1px solid var(--border-subtle, rgba(0, 212, 170, 0.12));
-  border-radius: 6px;
-  background: rgba(0, 0, 0, 0.2);
+  min-height: 120px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(10, 20, 36, 0.52), rgba(5, 11, 21, 0.35));
 }
 
 .chartSvg {
@@ -48,20 +64,24 @@
 
 .chartFooter {
   display: flex;
-  gap: 12px;
-  margin-top: 8px;
-  font-size: 11px;
-  color: var(--muted, rgba(255, 255, 255, 0.5));
+  gap: 8px;
 }
 
-.chartFooter span {
+.timeframeBtn,
+.timeframeActive {
+  height: 26px;
+  min-width: 44px;
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle);
+  background: var(--input-bg);
+  color: var(--muted);
+  font-size: 11px;
   cursor: pointer;
 }
 
-.chartFooter span:hover {
-  color: var(--terminal-fg, rgba(255, 255, 255, 0.8));
-}
-
-.chartFooter .active {
-  color: var(--accent, #00d4aa);
+.timeframeActive {
+  color: #07111b;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  border-color: transparent;
+  font-weight: 700;
 }

@@ -7,37 +7,40 @@
 
 .tabs {
   display: flex;
-  gap: 2px;
-  padding: 6px 8px 0;
-  border-bottom: 1px solid var(--border-subtle, rgba(0, 212, 170, 0.15));
+  gap: 6px;
+  padding: 8px 8px 0;
+  border-bottom: 1px solid var(--border-subtle);
   flex-shrink: 0;
 }
 
-.tab {
-  padding: 6px 12px;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--muted, rgba(255, 255, 255, 0.5));
-  background: transparent;
-  border: none;
-  border-radius: 4px 4px 0 0;
+.tab,
+.tabActive {
+  height: 30px;
+  padding: 0 12px;
+  font-size: 11px;
+  font-family: var(--font-ui);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 8px 8px 0 0;
   cursor: pointer;
-  transition: color 0.15s, background 0.15s;
+  border: 1px solid transparent;
+}
+
+.tab {
+  color: var(--muted);
+  background: transparent;
 }
 
 .tab:hover {
-  color: var(--terminal-fg, rgba(255, 255, 255, 0.9));
+  color: var(--terminal-fg);
+  border-color: var(--border-subtle);
 }
 
 .tabActive {
-  padding: 6px 12px;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--accent, #00d4aa);
-  background: var(--panel-bg, rgba(10, 14, 20, 0.8));
-  border: none;
-  border-radius: 4px 4px 0 0;
-  cursor: pointer;
+  color: var(--terminal-fg);
+  background: linear-gradient(180deg, rgba(56, 255, 215, 0.2), rgba(79, 195, 255, 0.08));
+  border-color: var(--border-subtle);
+  border-bottom-color: transparent;
 }
 
 .gridWrap {
