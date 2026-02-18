@@ -7,6 +7,12 @@
   width: 100%;
 }
 
+.inlineGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
 .section {
   display: flex;
   flex-direction: column;
@@ -16,8 +22,8 @@
 .label {
   font-size: 10px;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--muted, rgba(255, 255, 255, 0.5));
+  letter-spacing: 0.06em;
+  color: var(--muted);
 }
 
 .select,
@@ -25,18 +31,18 @@
   width: 100%;
   min-width: 0;
   padding: 8px 10px;
-  font-size: 13px;
-  font-family: inherit;
-  color: var(--terminal-fg, rgba(255, 255, 255, 0.9));
-  background: var(--input-bg, rgba(255, 255, 255, 0.06));
-  border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12));
+  font-size: 12px;
+  color: var(--terminal-fg);
+  background: var(--input-bg);
+  border: 1px solid var(--border-subtle);
   border-radius: 6px;
 }
 
 .select:focus,
 .input:focus {
   outline: none;
-  border-color: var(--accent, rgba(0, 212, 170, 0.5));
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-muted);
 }
 
 .sideGroup {
@@ -49,36 +55,45 @@
   padding: 8px;
   font-size: 12px;
   font-weight: 600;
-  color: var(--muted, rgba(255, 255, 255, 0.6));
-  background: var(--input-bg, rgba(255, 255, 255, 0.06));
-  border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12));
+  color: var(--muted);
+  background: var(--input-bg);
+  border: 1px solid var(--border-subtle);
   border-radius: 6px;
   cursor: pointer;
-  transition: color 0.15s, background 0.15s, border-color 0.15s;
 }
 
 .sideBtn:hover {
-  color: var(--terminal-fg, rgba(255, 255, 255, 0.9));
+  color: var(--terminal-fg);
 }
 
 .sideBuy {
-  color: var(--success, #00d4aa);
-  border-color: rgba(0, 212, 170, 0.35);
-  background: rgba(0, 212, 170, 0.08);
+  color: var(--success);
+  border-color: rgba(54, 244, 164, 0.35);
+  background: rgba(54, 244, 164, 0.1);
 }
 
 .sideSell {
-  color: var(--danger, #ff4757);
-  border-color: rgba(255, 71, 87, 0.35);
-  background: rgba(255, 71, 87, 0.08);
+  color: var(--danger);
+  border-color: rgba(255, 107, 128, 0.35);
+  background: rgba(255, 107, 128, 0.1);
+}
+
+.metricsRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  font-size: 12px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  background: var(--panel-bg);
 }
 
 .confirmBanner {
   padding: 10px;
   font-size: 12px;
-  color: var(--terminal-fg, rgba(255, 255, 255, 0.9));
-  background: rgba(255, 193, 7, 0.12);
-  border: 1px solid rgba(255, 193, 7, 0.35);
+  background: rgba(255, 191, 95, 0.14);
+  border: 1px solid rgba(255, 191, 95, 0.35);
   border-radius: 6px;
 }
 
@@ -92,55 +107,76 @@
 .btnSecondary {
   padding: 6px 12px;
   font-size: 12px;
-  font-weight: 500;
-  border-radius: 4px;
+  font-weight: 600;
+  border-radius: 6px;
   cursor: pointer;
 }
 
 .btnPrimary {
-  color: #0a0e14;
-  background: var(--accent, #00d4aa);
+  color: #07111b;
+  background: var(--accent);
   border: none;
 }
 
 .btnSecondary {
-  color: var(--muted, rgba(255, 255, 255, 0.6));
+  color: var(--terminal-fg);
   background: transparent;
-  border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.2));
+  border: 1px solid var(--border-subtle);
+}
+
+.riskBanner {
+  padding: 10px;
+  font-size: 12px;
+  background: rgba(255, 107, 128, 0.12);
+  border: 1px solid rgba(255, 107, 128, 0.35);
+  border-radius: 6px;
+}
+
+.riskTitle {
+  font-family: var(--font-ui);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.riskLine {
+  color: var(--terminal-fg);
+  margin-bottom: 4px;
+}
+
+.overrideLabel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .submitBtn {
   padding: 12px;
   font-size: 13px;
-  font-weight: 600;
-  color: #0a0e14;
-  background: var(--accent, #00d4aa);
+  font-weight: 700;
+  color: #07111b;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  transition: opacity 0.15s, filter 0.15s;
-}
-
-.submitBtn:hover:not(:disabled) {
-  filter: brightness(1.1);
 }
 
 .submitBtn:disabled {
-  opacity: 0.5;
+  opacity: 0.45;
   cursor: not-allowed;
 }
 
 .level1 {
-  margin-top: 8px;
+  margin-top: 4px;
   padding-top: 12px;
-  border-top: 1px solid var(--border-subtle, rgba(0, 212, 170, 0.12));
+  border-top: 1px solid var(--border-subtle);
 }
 
 .level1Title {
   font-size: 10px;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--muted, rgba(255, 255, 255, 0.5));
+  letter-spacing: 0.06em;
+  color: var(--muted);
   margin-bottom: 8px;
 }
 
@@ -157,10 +193,10 @@
 }
 
 .level1Label {
-  color: var(--muted, rgba(255, 255, 255, 0.5));
+  color: var(--muted);
 }
 
 .level1Value {
   font-variant-numeric: tabular-nums;
-  color: var(--terminal-fg, rgba(255, 255, 255, 0.9));
+  color: var(--terminal-fg);
 }
