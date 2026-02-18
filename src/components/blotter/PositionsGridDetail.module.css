@@ -1,0 +1,89 @@
+.positionsWrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+.detail {
+  margin-top: 8px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--border-subtle, rgba(0, 212, 170, 0.15));
+  border-radius: 6px;
+  flex-shrink: 0;
+  max-height: 180px;
+  overflow: auto;
+}
+
+.detailHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.detailTitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--terminal-fg, rgba(255, 255, 255, 0.9));
+}
+
+.closeBtn {
+  padding: 2px 8px;
+  font-size: 16px;
+  line-height: 1;
+  color: var(--muted, rgba(255, 255, 255, 0.5));
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.closeBtn:hover {
+  color: var(--terminal-fg, rgba(255, 255, 255, 0.9));
+}
+
+.riskRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  margin-bottom: 4px;
+}
+
+.riskRow span:first-child {
+  color: var(--muted, rgba(255, 255, 255, 0.5));
+}
+
+.fillsTitle {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted, rgba(255, 255, 255, 0.5));
+  margin: 8px 0 4px;
+}
+
+.fillsList {
+  font-size: 11px;
+}
+
+.fillsEmpty {
+  color: var(--muted, rgba(255, 255, 255, 0.4));
+  padding: 4px 0;
+}
+
+.fillRow {
+  display: grid;
+  grid-template-columns: 70px 50px 1fr 50px;
+  gap: 8px;
+  padding: 2px 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.fillRow .fillSideBuy {
+  color: var(--success, #00d4aa);
+}
+
+.fillRow .fillSideSell {
+  color: var(--danger, #ff4757);
+}
