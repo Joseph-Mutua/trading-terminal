@@ -1,0 +1,154 @@
+.terminal {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: var(--terminal-bg, #0a0e14);
+  color: var(--terminal-fg, rgba(255, 255, 255, 0.9));
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  min-height: 40px;
+  padding: 0 12px;
+  background: var(--topbar-bg, rgba(15, 20, 28, 0.95));
+  border-bottom: 1px solid var(--border-subtle, rgba(0, 212, 170, 0.15));
+  flex-shrink: 0;
+}
+
+.topBarLeft,
+.topBarCenter,
+.topBarRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.topBarCenter {
+  flex: 1;
+  justify-content: center;
+}
+
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.contentArea {
+  min-height: 0;
+  min-width: 0;
+}
+
+.panelGroup {
+  flex: 1;
+  min-height: 0;
+  height: 100%;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+}
+
+.panelContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding: 8px;
+  background: var(--panel-bg, rgba(10, 14, 20, 0.6));
+}
+
+.panelLabel {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted, rgba(255, 255, 255, 0.45));
+}
+
+.resizeHandle {
+  width: 4px;
+  min-width: 4px;
+  background: transparent;
+  transition: background 0.15s ease;
+}
+
+.resizeHandle:hover,
+.resizeHandle[data-resize-handle-active] {
+  background: var(--accent, rgba(0, 212, 170, 0.4));
+}
+
+.resizeHandleVertical {
+  height: 4px;
+  min-height: 4px;
+  background: transparent;
+  transition: background 0.15s ease;
+}
+
+.resizeHandleVertical:hover,
+.resizeHandleVertical[data-resize-handle-active] {
+  background: var(--accent, rgba(0, 212, 170, 0.4));
+}
+
+.blotterPanel {
+  min-width: 0;
+  min-height: 0;
+  border-top: 1px solid var(--border-subtle, rgba(0, 212, 170, 0.15));
+}
+
+.blotterContent {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  background: var(--panel-bg, rgba(10, 14, 20, 0.8));
+}
+
+.blotterTabs {
+  display: flex;
+  gap: 2px;
+  padding: 6px 8px 0;
+  border-bottom: 1px solid var(--border-subtle, rgba(0, 212, 170, 0.15));
+}
+
+.tab {
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted, rgba(255, 255, 255, 0.5));
+  background: transparent;
+  border: none;
+  border-radius: 4px 4px 0 0;
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s;
+}
+
+.tab:hover {
+  color: var(--terminal-fg, rgba(255, 255, 255, 0.9));
+}
+
+.tabActive {
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent, #00d4aa);
+  background: var(--panel-bg, rgba(10, 14, 20, 0.8));
+  border: none;
+  border-radius: 4px 4px 0 0;
+  cursor: pointer;
+}
+
+.blotterGridPlaceholder {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: var(--muted, rgba(255, 255, 255, 0.35));
+}
