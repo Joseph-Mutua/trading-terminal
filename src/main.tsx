@@ -1,5 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import 'ag-grid-enterprise';
 import App from './App';
 import './index.css';
 import 'ag-grid-community/styles/ag-grid.css';
