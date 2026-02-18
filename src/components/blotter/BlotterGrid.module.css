@@ -31,3 +31,31 @@
 .negative {
   color: var(--danger, #ff4757) !important;
 }
+
+.fillsWrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+.toolbar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 6px;
+  flex-shrink: 0;
+}
+
+.exportBtn {
+  padding: 4px 10px;
+  font-size: 11px;
+  color: var(--terminal-fg, rgba(255, 255, 255, 0.9));
+  background: var(--input-bg, rgba(255, 255, 255, 0.06));
+  border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.15));
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.exportBtn:hover {
+  border-color: var(--accent, rgba(0, 212, 170, 0.4));
+}
