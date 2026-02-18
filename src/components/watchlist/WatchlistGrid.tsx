@@ -269,6 +269,21 @@ export function WatchlistGrid() {
     [loadView, saveView]
   );
 
+  useEffect(() => {
+    const onGlobalSearch = (event: Event) => {
+      const query = (event as CustomEvent<{ query?: string }>).detail?.query ?? '';
+      setQuickFilterText(query);
+      apiRef.current?.setGridOption('quickFilterText', query);
+      saveView(GRID_ID, {
+        ...(loadView(GRID_ID) ?? {}),
+        quickFilterText: query,
+      });
+    };
+
+    window.addEventListener('terminal:global-search', onGlobalSearch);
+    return () => window.removeEventListener('terminal:global-search', onGlobalSearch);
+  }, [loadView, saveView]);
+
   return (
     <div className={styles.container}>
       <div className={styles.toolbar}>
