@@ -40,7 +40,13 @@ export function OrderEntryTicket() {
       setConfirmLarge(true);
       return;
     }
-    const order = createOrder(symbol, side, qtyNum, orderType, orderType === 'LIMIT' ? limitNum : undefined);
+    const order = createOrder({
+      symbol,
+      side,
+      qty: qtyNum,
+      type: orderType,
+      limitPrice: orderType === 'LIMIT' ? limitNum : undefined,
+    });
     addOrder(order);
     setQty('');
     setLimitPrice('');
