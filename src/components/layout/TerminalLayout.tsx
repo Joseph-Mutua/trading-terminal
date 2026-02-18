@@ -1,6 +1,7 @@
 import { Group, Panel, Separator } from 'react-resizable-panels';
 import { TopBar } from '../topbar/TopBar';
 import { WatchlistGrid } from '../watchlist/WatchlistGrid';
+import { OrderEntryTicket } from '../orderEntry/OrderEntryTicket';
 import styles from './TerminalLayout.module.css';
 
 export function TerminalLayout() {
@@ -44,6 +45,7 @@ export function TerminalLayout() {
               <Panel defaultSize={30} minSize={20} maxSize={40} className={styles.panel}>
                 <div className={styles.panelContent}>
                   <div className={styles.panelLabel}>Order Entry</div>
+                  <OrderEntryTicket />
                 </div>
               </Panel>
             </Group>

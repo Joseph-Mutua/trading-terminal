@@ -6,3 +6,4 @@ export { useOrdersStore } from './ordersStore';
 export { useFillsStore } from './fillsStore';
 export { usePositionsStore } from './positionsStore';
 export { useBlotterStore, type BlotterTab } from './blotterStore';
+export { useSelectionStore } from './selectionStore';
