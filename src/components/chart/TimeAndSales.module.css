@@ -1,0 +1,55 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  font-size: 11px;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 50px 1fr 50px;
+  gap: 8px;
+  padding: 4px 0;
+  color: var(--muted, rgba(255, 255, 255, 0.5));
+  border-bottom: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.08));
+}
+
+.list {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.empty {
+  padding: 12px;
+  color: var(--muted, rgba(255, 255, 255, 0.4));
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 50px 1fr 50px;
+  gap: 8px;
+  padding: 2px 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.row:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.time {
+  color: var(--muted, rgba(255, 255, 255, 0.5));
+}
+
+.price {
+  color: var(--terminal-fg, rgba(255, 255, 255, 0.9));
+}
+
+.buy {
+  color: var(--success, #00d4aa);
+}
+
+.sell {
+  color: var(--danger, #ff4757);
+}

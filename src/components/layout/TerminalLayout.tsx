@@ -2,6 +2,8 @@ import { Group, Panel, Separator } from 'react-resizable-panels';
 import { TopBar } from '../topbar/TopBar';
 import { WatchlistGrid } from '../watchlist/WatchlistGrid';
 import { OrderEntryTicket } from '../orderEntry/OrderEntryTicket';
+import { ChartPanel } from '../chart/ChartPanel';
+import { TimeAndSales } from '../chart/TimeAndSales';
 import styles from './TerminalLayout.module.css';
 
 export function TerminalLayout() {
@@ -29,12 +31,14 @@ export function TerminalLayout() {
                   <Panel defaultSize={70} minSize={20} className={styles.panel}>
                     <div className={styles.panelContent}>
                       <div className={styles.panelLabel}>Chart</div>
+                      <ChartPanel />
                     </div>
                   </Panel>
                   <Separator className={styles.resizeHandleVertical} />
                   <Panel defaultSize={30} minSize={15} className={styles.panel}>
                     <div className={styles.panelContent}>
                       <div className={styles.panelLabel}>Time & Sales</div>
+                      <TimeAndSales />
                     </div>
                   </Panel>
                 </Group>

@@ -1,0 +1,67 @@
+.chartPanel {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+.chartHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.symbol {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--terminal-fg, rgba(255, 255, 255, 0.9));
+}
+
+.last {
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted, rgba(255, 255, 255, 0.6));
+}
+
+.positive {
+  color: var(--success, #00d4aa);
+}
+
+.negative {
+  color: var(--danger, #ff4757);
+}
+
+.chartSvgWrap {
+  flex: 1;
+  min-height: 80px;
+  border: 1px solid var(--border-subtle, rgba(0, 212, 170, 0.12));
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.chartSvg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.chartFooter {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+  font-size: 11px;
+  color: var(--muted, rgba(255, 255, 255, 0.5));
+}
+
+.chartFooter span {
+  cursor: pointer;
+}
+
+.chartFooter span:hover {
+  color: var(--terminal-fg, rgba(255, 255, 255, 0.8));
+}
+
+.chartFooter .active {
+  color: var(--accent, #00d4aa);
+}
