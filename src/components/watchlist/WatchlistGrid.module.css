@@ -1,0 +1,25 @@
+.wrapper {
+  --ag-background-color: rgba(10, 14, 20, 0.6);
+  --ag-header-background-color: rgba(15, 20, 28, 0.9);
+  --ag-odd-row-background-color: transparent;
+  --ag-row-hover-color: rgba(0, 212, 170, 0.08);
+  --ag-border-color: rgba(0, 212, 170, 0.12);
+  --ag-header-foreground-color: rgba(255, 255, 255, 0.6);
+  --ag-foreground-color: rgba(255, 255, 255, 0.9);
+  --ag-font-size: 12px;
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+}
+
+.wrapper :global(.ag-root-wrapper) {
+  border-radius: 6px;
+}
+
+.positive {
+  color: var(--success, #00d4aa) !important;
+}
+
+.negative {
+  color: var(--danger, #ff4757) !important;
+}
