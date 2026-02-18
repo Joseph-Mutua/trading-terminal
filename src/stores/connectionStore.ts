@@ -13,8 +13,8 @@ interface ConnectionState {
 
 export const useConnectionStore = create<ConnectionState>((set) => ({
   environment: 'SIM',
-  connected: true,
-  latencyMs: 12,
+  connected: false,
+  latencyMs: 0,
   setEnvironment: (environment) => set({ environment }),
   setConnected: (connected) => set({ connected }),
   setLatencyMs: (latencyMs) => set({ latencyMs }),

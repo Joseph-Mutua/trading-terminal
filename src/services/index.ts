@@ -13,3 +13,4 @@ export {
   randomStrategyId,
 } from './mockData';
 export { startStreaming, stopStreaming, isStreaming } from './streamingService';
+export { initializeTerminalData, shutdownTerminalData } from './bootstrapService';
