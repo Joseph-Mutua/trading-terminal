@@ -1,9 +1,13 @@
 .terminal {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  min-width: 0;
   height: 100vh;
+  min-height: 0;
   background: var(--terminal-bg, #0a0e14);
   color: var(--terminal-fg, rgba(255, 255, 255, 0.9));
+  overflow: hidden;
 }
 
 .topBar {
@@ -61,8 +65,17 @@
   display: flex;
   flex-direction: column;
   min-height: 0;
+  min-width: 0;
   padding: 8px;
   background: var(--panel-bg, rgba(10, 14, 20, 0.6));
+  overflow: auto;
+}
+
+/* Right sidebar: keep order ticket readable, scroll if needed */
+.panelContent[data-panel="order-entry"] {
+  min-width: 260px;
+  overflow-x: auto;
+  overflow-y: auto;
 }
 
 .panelLabel {

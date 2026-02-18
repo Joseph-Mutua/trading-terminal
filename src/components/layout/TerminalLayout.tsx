@@ -19,8 +19,8 @@ export function TerminalLayout() {
         <Group orientation="vertical">
           <Panel defaultSize={70} minSize={40} className={styles.contentArea}>
             <Group orientation="horizontal" className={styles.panelGroup}>
-              {/* Left: Watchlist */}
-              <Panel defaultSize={22} minSize={15} maxSize={35} className={styles.panel}>
+              {/* Left: Watchlist - pixel min for readability */}
+              <Panel defaultSize={22} minSize="200px" maxSize={35} className={styles.panel}>
                 <div className={styles.panelContent}>
                   <div className={styles.panelLabel}>Watchlist</div>
                   <WatchlistGrid />
@@ -28,8 +28,8 @@ export function TerminalLayout() {
               </Panel>
               <Separator className={styles.resizeHandle} />
 
-              {/* Center: Chart + optional Time & Sales */}
-              <Panel defaultSize={48} minSize={30} className={styles.panel}>
+              {/* Center: Chart + optional Time & Sales - can shrink but has min */}
+              <Panel defaultSize={48} minSize="280px" className={styles.panel}>
                 <Group orientation="vertical">
                   <Panel defaultSize={70} minSize={20} className={styles.panel}>
                     <div className={styles.panelContent}>
@@ -48,9 +48,9 @@ export function TerminalLayout() {
               </Panel>
               <Separator className={styles.resizeHandle} />
 
-              {/* Right: Order entry + level-1 */}
-              <Panel defaultSize={30} minSize={20} maxSize={40} className={styles.panel}>
-                <div className={styles.panelContent}>
+              {/* Right: Order entry + level-1 - pixel min so it never gets squeezed */}
+              <Panel defaultSize={30} minSize="280px" maxSize={45} className={styles.panel}>
+                <div className={styles.panelContent} data-panel="order-entry">
                   <div className={styles.panelLabel}>Order Entry</div>
                   <OrderEntryTicket />
                 </div>
