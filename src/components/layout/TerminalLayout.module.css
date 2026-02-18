@@ -20,11 +20,13 @@
 .contentArea {
   min-height: 0;
   min-width: 0;
+  overflow: auto;
 }
 
 .panelGroup {
   flex: 1;
   min-height: 0;
+  min-width: 920px;
   height: 100%;
 }
 
@@ -49,7 +51,7 @@
 }
 
 .panelContent[data-panel='order-entry'] {
-  min-width: 260px;
+  min-width: 240px;
   overflow-x: auto;
   overflow-y: auto;
 }
@@ -94,6 +96,10 @@
 }
 
 @media (max-width: 980px) {
+  .panelGroup {
+    min-width: 820px;
+  }
+
   .panelContent {
     padding: 6px;
     border-radius: 8px;

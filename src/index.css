@@ -100,6 +100,14 @@ textarea {
   font-family: inherit;
 }
 
+/* Native select popups on Windows can render a light menu background.
+   Force readable option colors regardless of terminal theme. */
+select option,
+select optgroup {
+  color: #0b1629;
+  background-color: #ffffff;
+}
+
 .risk-banner {
   display: flex;
   align-items: center;

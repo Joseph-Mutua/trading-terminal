@@ -17,10 +17,10 @@ export function TerminalLayout() {
       {/* Main content: vertical split (content area | blotter) */}
       <div className={styles.mainContent}>
         <Group orientation="vertical">
-          <Panel defaultSize={70} minSize={40} className={styles.contentArea}>
+          <Panel defaultSize="70%" minSize="45%" className={styles.contentArea}>
             <Group orientation="horizontal" className={styles.panelGroup}>
               {/* Left: Watchlist - pixel min for readability */}
-              <Panel defaultSize={22} minSize="200px" maxSize={35} className={styles.panel}>
+              <Panel defaultSize="20%" minSize="14%" maxSize="30%" className={styles.panel}>
                 <div className={styles.panelContent}>
                   <div className={styles.panelLabel}>Watchlist</div>
                   <WatchlistGrid />
@@ -29,16 +29,16 @@ export function TerminalLayout() {
               <Separator className={styles.resizeHandle} />
 
               {/* Center: Chart + optional Time & Sales - can shrink but has min */}
-              <Panel defaultSize={48} minSize="280px" className={styles.panel}>
+              <Panel defaultSize="46%" minSize="28%" maxSize="58%" className={styles.panel}>
                 <Group orientation="vertical">
-                  <Panel defaultSize={70} minSize={20} className={styles.panel}>
+                  <Panel defaultSize="70%" minSize="20%" className={styles.panel}>
                     <div className={styles.panelContent}>
                       <div className={styles.panelLabel}>Chart</div>
                       <ChartPanel />
                     </div>
                   </Panel>
                   <Separator className={styles.resizeHandleVertical} />
-                  <Panel defaultSize={30} minSize={15} className={styles.panel}>
+                  <Panel defaultSize="30%" minSize="15%" className={styles.panel}>
                     <div className={styles.panelContent}>
                       <div className={styles.panelLabel}>Time & Sales</div>
                       <TimeAndSales />
@@ -49,7 +49,7 @@ export function TerminalLayout() {
               <Separator className={styles.resizeHandle} />
 
               {/* Right: Order entry + level-1 - pixel min so it never gets squeezed */}
-              <Panel defaultSize={30} minSize="280px" maxSize={45} className={styles.panel}>
+              <Panel defaultSize="34%" minSize="24%" maxSize="42%" className={styles.panel}>
                 <div className={styles.panelContent} data-panel="order-entry">
                   <div className={styles.panelLabel}>Order Entry</div>
                   <OrderEntryTicket />
@@ -59,7 +59,7 @@ export function TerminalLayout() {
           </Panel>
           <Separator className={styles.resizeHandleVertical} />
           {/* Bottom: Blotter tabs */}
-          <Panel defaultSize={30} minSize={120} maxSize={50} className={styles.blotterPanel}>
+          <Panel defaultSize="30%" minSize="20%" maxSize="55%" className={styles.blotterPanel}>
             <Blotter />
           </Panel>
         </Group>
