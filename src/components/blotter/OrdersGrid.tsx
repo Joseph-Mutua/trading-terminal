@@ -1,14 +1,40 @@
-import { useMemo, useCallback } from 'react';
+import { useMemo, useCallback, useRef } from 'react';
 import { AgGridReact } from 'ag-grid-react';
-import type { ColDef } from 'ag-grid-community';
+import type { ColDef, GridReadyEvent, ColumnState } from 'ag-grid-community';
 import { useOrdersStore } from '../../stores/ordersStore';
 import type { Order } from '../../types';
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
 import styles from './BlotterGrid.module.css';
 
+const ORDERS_VIEW_KEY = 'trading-terminal-orders-view';
+
 export function OrdersGrid() {
   const orders = useOrdersStore((s) => s.orders);
+  const gridRef = useRef<AgGridReact<Order>>(null);
+
+  const onGridReady = useCallback((e: GridReadyEvent<Order>) => {
+    try {
+      const saved = localStorage.getItem(ORDERS_VIEW_KEY);
+      if (saved) {
+        const state = JSON.parse(saved) as { columnState?: ColumnState[] };
+        if (state.columnState?.length) e.api.applyColumnState({ state: state.columnState });
+      }
+    } catch {
+      /* ignore */
+    }
+  }, []);
+
+  const saveView = useCallback(() => {
+    const api = gridRef.current?.api;
+    if (!api) return;
+    try {
+      const columnState = api.getColumnState();
+      localStorage.setItem(ORDERS_VIEW_KEY, JSON.stringify({ columnState }));
+    } catch {
+      /* ignore */
+    }
+  }, []);
 
   const columnDefs = useMemo<ColDef<Order>[]>(
     () => [
@@ -36,6 +62,7 @@ export function OrdersGrid() {
   return (
     <div className={`ag-theme-alpine ${styles.wrapper}`}>
       <AgGridReact<Order>
+        ref={gridRef}
         rowData={orders}
         columnDefs={columnDefs}
         defaultColDef={defaultColDef}
@@ -45,6 +72,10 @@ export function OrdersGrid() {
         domLayout="normal"
         animateRows={false}
         suppressCellFocus={false}
+        onGridReady={onGridReady}
+        onColumnMoved={saveView}
+        onColumnResized={saveView}
+        onSortChanged={saveView}
       />
     </div>
   );

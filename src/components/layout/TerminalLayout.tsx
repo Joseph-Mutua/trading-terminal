@@ -5,12 +5,14 @@ import { OrderEntryTicket } from '../orderEntry/OrderEntryTicket';
 import { ChartPanel } from '../chart/ChartPanel';
 import { TimeAndSales } from '../chart/TimeAndSales';
 import { Blotter } from '../blotter/Blotter';
+import { RiskWarningBanner } from '../safety/RiskWarningBanner';
 import styles from './TerminalLayout.module.css';
 
 export function TerminalLayout() {
   return (
     <div className={styles.terminal}>
       <TopBar />
+      <RiskWarningBanner />
 
       {/* Main content: vertical split (content area | blotter) */}
       <div className={styles.mainContent}>

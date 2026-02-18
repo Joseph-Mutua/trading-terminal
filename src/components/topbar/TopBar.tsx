@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
 import { useConnectionStore } from '../../stores/connectionStore';
 import { useThemeStore } from '../../stores/themeStore';
 import styles from './TopBar.module.css';
@@ -8,7 +8,22 @@ const ENVIRONMENTS = ['SIM', 'PAPER', 'LIVE'] as const;
 export function TopBar() {
   const [searchFocused, setSearchFocused] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const searchInputRef = useRef<HTMLInputElement>(null);
   const { environment, setEnvironment, connected, latencyMs } = useConnectionStore();
+
+  useEffect(() => {
+    const onGlobalKeyDown = (e: KeyboardEvent) => {
+      if (e.key === '/' && !['INPUT', 'TEXTAREA', 'SELECT'].includes((e.target as HTMLElement)?.tagName)) {
+        e.preventDefault();
+        searchInputRef.current?.focus();
+      }
+      if (e.key === 'Escape') {
+        (document.activeElement as HTMLElement)?.blur();
+      }
+    };
+    document.addEventListener('keydown', onGlobalKeyDown);
+    return () => document.removeEventListener('keydown', onGlobalKeyDown);
+  }, []);
   const { theme, toggleTheme } = useThemeStore();
 
   const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
@@ -50,11 +65,12 @@ export function TopBar() {
 
       <div className={styles.center}>
         <div className={`${styles.searchWrap} ${searchFocused ? styles.searchFocused : ''}`}>
-          <span className={styles.searchIcon} aria-hidden>⌘</span>
+          <span className={styles.searchIcon} aria-hidden>/</span>
           <input
+            ref={searchInputRef}
             type="search"
             className={styles.searchInput}
-            placeholder="Search symbol…"
+            placeholder="Search symbol… (/)"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             onFocus={() => setSearchFocused(true)}
