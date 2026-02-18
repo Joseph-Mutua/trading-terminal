@@ -46,7 +46,7 @@
   padding: 8px;
   border: 1px solid var(--border-subtle);
   border-radius: 10px;
-  background: linear-gradient(180deg, rgba(8, 16, 30, 0.56), rgba(7, 12, 22, 0.44));
+  background: var(--panel-surface);
   overflow: auto;
 }
 

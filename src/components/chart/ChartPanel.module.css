@@ -53,7 +53,7 @@
   min-height: 120px;
   border: 1px solid var(--border-subtle);
   border-radius: 8px;
-  background: linear-gradient(180deg, rgba(10, 20, 36, 0.52), rgba(5, 11, 21, 0.35));
+  background: var(--chart-surface);
 }
 
 .chartSvg {

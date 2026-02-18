@@ -13,12 +13,15 @@
   --ag-font-size: 12px;
   --ag-grid-size: 6px;
   --ag-list-item-height: 26px;
+  --terminal-grid-shell-bg: linear-gradient(180deg, rgba(8, 16, 30, 0.7), rgba(5, 10, 20, 0.7));
+  --terminal-grid-row-divider: rgba(255, 255, 255, 0.03);
+  --terminal-grid-cell-divider: rgba(255, 255, 255, 0.05);
 }
 
 .terminal-grid-theme .ag-root-wrapper {
   border: 1px solid var(--border-subtle);
   border-radius: 8px;
-  background: linear-gradient(180deg, rgba(8, 16, 30, 0.7), rgba(5, 10, 20, 0.7));
+  background: var(--terminal-grid-shell-bg);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02), var(--glow);
 }
 
@@ -30,13 +33,13 @@
 }
 
 .terminal-grid-theme .ag-row {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid var(--terminal-grid-row-divider);
 }
 
 .terminal-grid-theme .ag-cell,
 .terminal-grid-theme .ag-header-cell,
 .terminal-grid-theme .ag-header-group-cell {
-  border-right-color: rgba(255, 255, 255, 0.05);
+  border-right-color: var(--terminal-grid-cell-divider);
 }
 
 .terminal-grid-theme .ag-cell-data-changed {
@@ -63,8 +66,7 @@
   --ag-header-foreground-color: rgba(11, 22, 41, 0.66);
   --ag-row-hover-color: rgba(14, 165, 167, 0.1);
   --ag-selected-row-background-color: rgba(14, 165, 167, 0.12);
-}
-
-[data-theme='light'] .terminal-grid-theme .ag-root-wrapper {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(245, 250, 255, 0.84));
+  --terminal-grid-shell-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(242, 248, 255, 0.88));
+  --terminal-grid-row-divider: rgba(11, 22, 41, 0.08);
+  --terminal-grid-cell-divider: rgba(11, 22, 41, 0.09);
 }
